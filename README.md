@@ -2,7 +2,7 @@
 
 ## Lab - Migrating Legacy JEE apps to Kubernetes
 
-### Part 1 - Working with IBM Cloud Transformation Advisor
+### Working with IBM Cloud Transformation Advisor
 
 ## Overview
 
@@ -72,7 +72,7 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 
     ![View the steps](images/ss7.png)
 
-9. Note that various options are supported including a Dockerfile, a helm chart and manifest for deployment to any  Kubernetes cluster (IBM Cloud Private, Open Shift, IBM Cloud Kubenetes Service etc).
+9. Note that various options are supported including a Dockerfile, a helm chart and manifest for deployment to any  Kubernetes cluster (IBM Cloud Private, Open Shift, IBM Cloud Kubernetes Service etc).
 
 10. Look through the migration steps. You'll be (more or less) following these steps  if you use this tool to aid in the migration of your own legacy apps to a modern containerized environment.
 
