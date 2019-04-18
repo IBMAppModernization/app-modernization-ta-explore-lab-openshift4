@@ -1,6 +1,6 @@
 # IBM Client Developer Advocacy App Modernization Series
 
-## Lab - Migrating Legacy JEE apps to IBM Cloud Private
+## Lab - Migrating Legacy JEE apps to Kubernetes
 
 ### Part 1 - Working with IBM Cloud Transformation Advisor
 
@@ -79,4 +79,4 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 
 ## Summary
 
-Take a bow. You've gone through the process of migrating an app running on WebSphere Application Server to a containerized version running on WebSphere Liberty in ICP.
+You've gone through the process of evaluating various legacy  WebSphere Application Server apps for  migration  to a containerized version running on WebSphere Liberty in Kubernetes.
