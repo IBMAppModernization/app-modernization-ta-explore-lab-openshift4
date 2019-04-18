@@ -16,7 +16,7 @@ Transformation Advisor supports legacy applications running on the following pla
 - Apache Tomcat
 - Plain Old Java Objects running in a JVM
 
-In this short lab you'll run Transformation Advisor against the data collected from an instance of WebSphere Application Server V8.5.5 and examine the recommendations provided for a different Java EE applications. You'll  then look at the artifacts generated for one  those apps (the later version of the WebSphere sample app Plants By WebSphere)  for deployment on a Liberty container running in IBM Cloud Private using the migration bundle  generated for this app by Transformation Advisor.
+In this short lab you'll run Transformation Advisor against the data collected from an instance of WebSphere Application Server V8.5.5 and examine the recommendations provided for a different Java EE applications. You'll  then look at the artifacts generated for one  those apps (the later version of the WebSphere sample app Plants By WebSphere)  for deployment on a Liberty container running in Kubernetes using the migration bundle  generated for this app by Transformation Advisor.
 
 ### Step 1: Launch Transformation Advisor and import data collected from  WebSphere Application Server
 
@@ -72,7 +72,7 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 
     ![View the steps](images/ss7.png)
 
-9. Note that various options are supported including a Dockerfile, a helm chart and manifest for deployment to any  Kuberenetes cluster (IBM Cloud Private, Open Shift, IBM Cloud Kubernetes Service etc).
+9. Note that various options are supported including a Dockerfile, a helm chart and manifest for deployment to any  Kubernetes cluster (IBM Cloud Private, Open Shift, IBM Cloud Kubenetes Service etc).
 
 10. Look through the migration steps. You'll be (more or less) following these steps  if you use this tool to aid in the migration of your own legacy apps to a modern containerized environment.
 
