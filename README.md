@@ -6,7 +6,7 @@
 
 ## Overview
 
-IBM Cloud Transformation Advisor helps you access, analyze and modernize middleware based apps for deployment on OpenShift. It categorizes Java EE apps and MQ queue managers as simple, medium and complex based on migration complexity and provides guidance for modernization. Transformation Advisor is  included as web app with [IBM Cloud Pak for applications](https://www.ibm.com/cloud/cloud-pak-for-applications/get-started) and is also available to be run in [a local Docker environment
+IBM Cloud Transformation Advisor helps you access, analyze and modernize middleware based apps for deployment on OpenShift. It categorizes Java EE apps and MQ queue managers as simple, medium and complex based on migration complexity and provides guidance for modernization. Transformation Advisor is  included as a web app with [IBM Cloud Pak for applications](https://www.ibm.com/cloud/cloud-pak-for-applications/get-started) and is also available to be run in [a local Docker environment](https://www.ibm.com/cloud/garage/tutorials/install-ibm-transformation-advisor-local)
 
 Transformation Advisor analyzes the applications running on the following middleware:
 
