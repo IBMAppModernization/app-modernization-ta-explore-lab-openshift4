@@ -1,20 +1,23 @@
 # IBM Client Developer Advocacy App Modernization Series
 
-## Lab - Migrating Legacy JEE apps to Kubernetes
+## Lab - Migrating Legacy JEE apps to OpenShift
 
 ### Working with IBM Cloud Transformation Advisor
 
 ## Overview
 
-The IBM Cloud Transformation is a developer tool available on IBM® Cloud Private. It can quickly evaluate your on-premises applications for rapid deployment on WebSphere Application Server and Liberty on public or private cloud environments.
+IBM Cloud Transformation Advisor helps you access, analyze and modernize middleware based apps for deployment on OpenShift. It categorizes Java EE apps and MQ queue managers as simple, medium and complex based on migration complexity and provides guidance for modernization. Transformation Advisor is  included as web app with [IBM Cloud Pak for applications](https://www.ibm.com/cloud/cloud-pak-for-applications/get-started) and is also available to be run in [a local Docker environment
 
-Transformation Advisor supports legacy applications running on the following platforms:
+Transformation Advisor analyzes the applications running on the following middleware:
 
-- WebSphere Application Server
-- JBoss AS
-- Oracle Web Logic
-- Apache Tomcat
-- Plain Old Java Objects running in a JVM
+**Java EE application servers**
+- WebLogic Server V6.0 – V11.0
+- IBM WebSphere® Application Server V7.0, or later
+- Apache Tomcat V6.0 (and later)
+- Java applications running in a JVM
+
+**Messaging**
+- IBM MQ V7, or later
 
 In this short lab you'll run Transformation Advisor against the data collected from an instance of WebSphere Application Server V8.5.5 and examine the recommendations provided for a different Java EE applications. You'll  then look at the artifacts generated for one  those apps (the later version of the WebSphere sample app Plants By WebSphere)  for deployment on a Liberty container running in Kubernetes using the migration bundle  generated for this app by Transformation Advisor.
 
@@ -28,7 +31,7 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 
 3. Click on **Add a new workspace**
 
-4. Enter a unique name for your workspace e.g. `usernnn_ta_workspace` where `usernnn` is your assigned  user ID (e.g. `user011`)
+4. Enter a unique name for your workspace e.g. `usernnn_ta_workspace` where `usernnn` is your assigned  student  ID (e.g. `user011`)
 
 5. Click **Next** and enter a name for the collection e.g. `lab_collection`
 
