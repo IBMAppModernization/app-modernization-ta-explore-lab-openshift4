@@ -27,9 +27,11 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 
 1. Download the server scan by right clicking on [this link](https://github.com//IBMAppModernization/app-modernization-ta-explore-lab/raw/master/ta/AppSrv01.zip) and selecting **Save Link As** from the context menu to save the file locally.
 
-2. Login in to Transformation Advisor using the URL and credentials provided to you by your instructor
+2. Access Transformation Advisor by following the URL given to you by the instructor. You will then be asked to log in with either `kube:admin` or `dragonslayer-ldap`. Select `dragonslayer-ldap` and log in using credentials provided to you by your instructor. 
 
-3. Click on **Add a new workspace**
+![dragonslayer-ldap](./images/dragonslayer_ldap.png)
+
+3. Once logged into Transformation Advisor, click on **Add a new workspace**
 
 4. Enter a unique name for your workspace e.g. `usernnn_ta_workspace` where `usernnn` is your assigned  student  ID (e.g. `user011`)
 
@@ -55,30 +57,45 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 
 2. Scroll down to the bottom of the page and click on **Analysis Report**. Click **OK** when prompted.
 
-3. The analysis will open up in a new browser tab. Scroll down to the section with title **Detailed Results by Rule** and click on **Show rule help** next to the rule named **The JSF SunRI engine was removed** to see more details about what needs to be fixed to migrate the Java Pet Store app to WebSphere Liberty running on ICP. Take a look at some of the  other information in the report to get a feel for what type of information to expect when running Transformation Advisor against your own legacy Java EE apps.
+3. The analysis will open up in a new browser tab. Scroll down to the section with title **Detailed Results by Rule** and click on **Show rule help** next to the rule named **The JSF SunRI engine was removed** to see more details about what needs to be fixed to migrate the Java Pet Store app to WebSphere Liberty running on OpenShift. Take a look at some of the  other information in the report to get a feel for what type of information to expect when running Transformation Advisor against your own legacy Java EE apps.
 
     ![Sun JSF RI](images/ss4.png)
 
-4. Go back to the **IBM Transformation** browser tab and click on **<- Recommendations** to go back to the list of apps.
+4. Go back to the **IBM Cloud Transformation** browser tab, scroll to the top of the page, and click on **Recommendations /** to go back to the list of apps.
 
     ![Recommendation link](images/ss5.png)
 
 5. This time take a look at one of the "show stoppers" for the app **plants-by-websphere-jee5.ear** by selecting the app and then clicking on the Analysis Report link. This version of the  WebSphere sample Plants by WebSphere was shipped with WebSphere Application Server V7.0. Two  of the  three severe issues have to do with no support for the JAX-RPC API in Liberty. Note: with the explosion of REST based APIs, technologies like JAX-RPC and SOAP/WSDL have become more or less obsolete.
 
-6. Go back to the **IBM Transformation** browser tab and click on **<- Recommendations** to go back to the list of apps.
+6. Go back to the **IBM Cloud Transformation** browser tab, scroll to the top of the page, and click on **Recommendations /** to go back to the list of apps.
 
-7. Now you'll look at the migration plan for the app **plants-by-websphere-jee6-mysql.ear**. This is the Plants By WebSphere  app that comes with WebSphere Application Server 8.5.5 and  has been tweaked to work with the MySQL database instead of the  embedded Apache Derby database that the original uses. Note that this version uses JAX-RS (the Java API for RESTful Web Services) instead of JAX-RPC and JAX-RS is fully supported on WebSphere Liberty. Click on **Migration plan** as shown below
+7. Now you'll look at the migration plan for the app **plants-by-websphere-jee6-mysql.ear**. This is the Plants By WebSphere  app that comes with WebSphere Application Server 8.5.5 and  has been tweaked to work with the MySQL database instead of the  embedded Apache Derby database that the original uses. Note that this version uses JAX-RS (the Java API for RESTful Web Services) instead of JAX-RPC and JAX-RS is fully supported on WebSphere Liberty. Click on three dot menu button to the right of **plants-by-websphere-jee6-mysql.ear** and then select **Migration plan** as shown below
 
     ![Migration Plan](images/ss6.png)
 
-8. On the left you should see a list of files generated to aid the migration of the app to Liberty running in ICP . On the right click the link **View the steps ->**
+8. On this page you can decide how you want to recieve the output of Transformation Advisor. You have two options for what you want included in the bundled output:
+- **Source Code:** The application code is included in the bundle so that you can make tweaks to your application before deployment.
+- **Binary:** The application binaries are included in the bundle if you want to deploy without changes to the application. 
 
-    ![View the steps](images/ss7.png)
+Most applications will require some tweaks to the source code in order for it to be deployable.
 
-9. Note that various options are supported including a Dockerfile, a helm chart and manifest for deployment to any  Kubernetes cluster (IBM Cloud Private, Open Shift, IBM Cloud Kubernetes Service etc).
+With **Source Code** selected as your build type you will notice a list of files that are generated for you by Transformation Advisor to aid the migration of the app to Liberty running in Kubernetes. This includes:
+- **server.xml:** WebSphere Liberty configurations 
+- **pom.xml:** Maven build configuration
+- **Operator resources:** Files needed to deploy an [Operator](https://www.redhat.com/en/blog/introducing-operator-framework-building-apps-kubernetes) to your Kubernetes cluster to manage your application.
+- **Dockerfile:** Docker container build instructions
 
-10. Look through the migration steps. You'll be (more or less) following these steps  if you use this tool to aid in the migration of your own legacy apps to a modern containerized environment.
+![Source Code Build Type](./images/sourceCode.png)
 
+If you select **Binary** as your build type, you will then need to provide Application Dependencies including the **Aplication Binary** and the **MySQL driver**. These will then be added to your migration bundle along with the files mentioned above. 
+
+![Binary Build type](./images/binaryBuild.png)
+
+Lastly, Transformation Advisor gives you the choice to either download or send your migration bundle to a git repository by selecting either of the respective **Download** or **Send to Git** buttons in the bottom right of the page. 
+
+![Bundle buttons](./images/bundleButtons.png)
+
+Don't worry about doing anything with this bundle right now. In a later lab we will explore how to deploy the application.
 
 ## Summary
 
