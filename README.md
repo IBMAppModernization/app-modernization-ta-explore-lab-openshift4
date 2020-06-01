@@ -27,9 +27,13 @@ Transformation Advisor organizes your legacy server scans into workspaces and co
 
 1. Download the server scan by right clicking on [this link](https://github.com//IBMAppModernization/app-modernization-ta-explore-lab/raw/master/ta/AppSrv01.zip) and selecting **Save Link As** from the context menu to save the file locally.
 
-2. Access Transformation Advisor by following the URL given to you by the instructor. You will then be asked to log in with either `kube:admin` or `dragonslayer-ldap`. Select `dragonslayer-ldap` and log in using credentials provided to you by your instructor.
+2. Access Transformation Advisor by following the URL given to you by the instructor.
 
-![dragonslayer-ldap](./images/dragonslayer_ldap.png)
+<!-- You will then be asked to log in with either `kube:admin` or `dragonslayer-ldap`. Select `dragonslayer-ldap` and log in using credentials provided to you by your instructor.
+
+![dragonslayer-ldap](./images/dragonslayer_ldap.png) -->
+
+![TA Homepage](./images/ta_home.png)
 
 3. Once in Transformation Advisor, click on **Add a new workspace**
 
